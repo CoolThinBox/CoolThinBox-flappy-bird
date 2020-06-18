@@ -13,6 +13,7 @@
     width: 30px;
     height: 30px;
     background-image: url(../images/birds.png); 
+    transition: top .3s linear;
 }
 
 .start{
@@ -25,6 +26,8 @@
     line-height: 60px;
     text-align: center;
     font-weight: bolder;
+    transition: all .3 linear;
+    cursor: pointer;
 }
 
 .start.start-white{
@@ -44,6 +47,7 @@
     font-size: 24px;
     color: #fff;
     font-weight: bolder;
+    display: none;
 }
 
 .mask{
@@ -54,6 +58,7 @@
     bottom: 0;
     background-color: #000;
     opacity: .7;
+    display: none;
 }
 
 .end{
@@ -62,6 +67,7 @@
     left: 50%;
     transform: translateX(-50%);   
     text-align: center;
+    display: none;
 }
 
 .end .over{
