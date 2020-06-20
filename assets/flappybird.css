@@ -3,6 +3,8 @@
     width: 100%;
     height: 600px;
     background-image: url(../images/sky.png);
+    overflow: hidden;
+    user-select: none;
 }
 
 .bird{
@@ -26,16 +28,16 @@
     line-height: 60px;
     text-align: center;
     font-weight: bolder;
-    transition: all .3 linear;
+    transition: all .3 ease-in-out;
     cursor: pointer;
 }
 
-.start.start-white{
+.start-white{
     color: #fff;
     font-size: 24px;
 }
 
-.start.start-blue{
+.start-blue{
     color: #09f;
     font-size: 36px;
 }
@@ -48,6 +50,8 @@
     color: #fff;
     font-weight: bolder;
     display: none;
+    z-index: 1;
+    user-select: none;
 }
 
 .mask{
@@ -56,9 +60,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #000;
-    opacity: .7;
+    background-color: rgba(0, 0, 0, .7);
     display: none;
+    z-index: 1;
 }
 
 .end{
@@ -68,6 +72,8 @@
     transform: translateX(-50%);   
     text-align: center;
     display: none;
+    z-index: 2;
+    user-select: none;
 }
 
 .end .over{
@@ -97,6 +103,17 @@
     font-size: 13px;
 }
 
+.end .rank-item::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+  
+  .end .rank-item > span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
 .end .rank-degree{
     display: inline-block;
     height: 14px;
@@ -122,13 +139,36 @@
 }
 
 .end .rank-score{
-    display: inline-block;
+    /* display: inline-block; */
     width: 30px;
 }
 
+.end .rank-time {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
 .end .restart{
     color: #09f;
     font-size: 18px;
     font-weight: bolder;
     cursor: pointer;
+}
+
+.pipe{
+    position: absolute;
+    width: 52px;
+}
+
+.pipe--up{
+    background-image: url(../images/pipe2.png);
+    background-position-y: bottom;
+    top:0;
+}
+
+.pipe--down{
+    background-image: url(../images/pipe1.png);
+    bottom: 0;
 }
